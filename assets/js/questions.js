@@ -6,7 +6,7 @@ var questions = [
   },
   {
     title: "What year was Back to the Future released?:",
-    choices: ["2015", "1985", "1985", "1885"],
+    choices: ["2015", "1975", "1985", "1885"],
     answer: "1985"
   },
   {
@@ -49,39 +49,4 @@ var questions = [
     choices: ["1990", "1976", "1984", "2000"],
     answer: "1984"
   },
-
-
-];
-// for loop to get questions.
-
-for (let i = 0; i < questions.length; i++) {
-  btn.append(questions[i].title);
-  for (let j = 0; j < 4; j++) {
-    var btn2 = document.createElement("button");
-    btn2.setAttribute("class", "btn2");
-    btn2.setAttribute("type", "submit");
-    btn2.setAttribute("answer", questions[i].answer);
-    btn2.textContent = (questions[i].choices[j]);
-    btn.append(btn2);
-
-
-    const answers = ["Four", "1985", "Bupkiss!", "Cascading Style Sheets", "Pisces", "Jacksonville, FL", "The United Kingdom", "Application Programming Interface", ""];
-    
-
-    
-
-    }
-
-
-
-
-
-
-
-
-
-
-    console.log(btn2);
-  }
-
-
+]

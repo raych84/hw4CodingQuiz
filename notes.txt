@@ -1,0 +1,12 @@
+# start quiz
+** startTimer
+# showQuestions & answerChoices
+# allow user to select answer (BUTTON)
+# if user gets answer wrong, deduct time and flash message ("Incorrect!")
+# if user gets answer correct, flash message ("Correct!")
+# move to nextQuestion and hide previous question and answerChoices
+# store answerChoices (local storage)
+# add total correct answerChoices
+# display total score
+# prompt for user to enter a initials (3 char max) 
+# display top 3 scores
