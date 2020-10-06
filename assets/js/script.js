@@ -2,13 +2,12 @@
 // console.log(questions);
 
 var currentQuestion = 0;
-var time = 90
+var time = 60
 var gameStart = false;
 var timerId;
 var highScore = 0;
-var stopTimer
+var stopTimer;
 
-// variables to reference DOM elements
 var questionsEl = document.getElementById("questions");
 var timerEl = document.getElementById("time");
 var choicesEl = document.getElementById("choices");
@@ -18,26 +17,24 @@ var initialsEl = document.getElementById("initials");
 var feedbackEl = document.getElementById("feedback");
 var startScreen = document.getElementById("start-screen");
 var quizQuestion = document.getElementById("quiz-question");
-var userSelect = document.getElementById("user-select1");
-var userSelect2 = document.getElementById("user-select2");
-var userSelect3 = document.getElementById("user-select3");
-var userSelect4 = document.getElementById("user-select4");
-
+var userSelect = document.querySelectorAll(".user-select");
 
 
 // Funtion to Hide Questions onStart
 function onStart() {
     startScreen.style.display = "none";
 }
-// Update UI function
+// Update UI function (display Questions)
 function updateUI() {
     timerEl.innerHTML = `Timer ${time}`
     quizQuestion.innerHTML = `${questions[currentQuestion].title}`;
-    userSelect.innerHTML = questions[currentQuestion].choices[0];
-    userSelect2.innerHTML = questions[currentQuestion].choices[1];
-    userSelect3.innerHTML = questions[currentQuestion].choices[2];
-    userSelect4.innerHTML = questions[currentQuestion].choices[3];
 
+
+    userSelect.forEach(function(button, index) {
+        button.innerHTML = questions[currentQuestion].choices[index];
+    })
+
+    
 
 }
 
@@ -48,11 +45,11 @@ window.setInterval(function () {
     }
     //  Stop Timer
     function stopTimer() {
-        clearInterval(sec);
+        clearInterval(stopTimer);
     }
     // Call function
     updateUI()
-    endGameCheck()
+  
 
 }, 1000)
 // Functions 
@@ -62,26 +59,19 @@ startBtn.addEventListener("click", function () {
     gameStart = true
 
     startQuiz()
-})
-// Event listener for choices button
-userSelect.addEventListener("click", function () {
-    nextQuestion()
-    verifyAnswer(0)
-
-})
-userSelect2.addEventListener("click", function () {
-    nextQuestion()
-    verifyAnswer(1)
-})
-userSelect3.addEventListener("click", function () {
-    nextQuestion()
-    verifyAnswer(2)
-})
-userSelect4.addEventListener("click", function () {
-    nextQuestion()
-    verifyAnswer(3)
+    endGameCheck()
 })
 
+
+
+
+userSelect.forEach(function(button, index) {
+
+    button.addEventListener('click', function() {
+        nextQuestion();
+        verifyAnswer(index);
+    })
+});
 
 // Start Quiz
 function startQuiz() {
@@ -92,7 +82,9 @@ function startQuiz() {
 
 // Next question function
 function nextQuestion() {
-    currentQuestion++;
+    if (currentQuestion < questions.length) currentQuestion++;
+    return;
+
 }
 
 // Function to add points
@@ -108,11 +100,12 @@ function verifyAnswer(answerSelected) {
 
 // Function to subtract time if user gets answer wrong
 function subtractTime() {
-    time -= 15
+    var currentTime = timerEl
+    currentTime -= 15
 }
 // Function to end game
 function endGameCheck() {
-    if (currentQuestion > currentQuestion.length && time == 0) {
+    if (currentQuestion > currentQuestion.length && time === 0) {
         endGameCheck() && stopTimer()
 
     }
@@ -130,5 +123,8 @@ var saveGame = JSON.parse(localStorage.getItem("save"));
 
 // Display final score
 function finalScore() {
-    finalScore = document.getElementsByClassName("results")
+    return highScore + currentTime
 }
+
+// clear local storage
+localStorage.clear();
