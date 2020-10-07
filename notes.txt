@@ -10,3 +10,9 @@
 # display total score
 # prompt for user to enter a initials (3 char max) 
 # display top 3 scores
+
+
+
+1 Keep track of time
+2 Keep track of current score
+3 Keep track of question user is on

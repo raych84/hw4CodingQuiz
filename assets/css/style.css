@@ -10,8 +10,9 @@ body {
     font-size: 36pt;
 }
 
-.time {
-    float: left;
+#time {
+    float: right;
+    right: 0%;
     font-size: 18pt;
 }
 
@@ -21,23 +22,30 @@ body {
     border-style: solid;    
 }
 
+#choice-list, #save-form {
+    display: none;
+}
+
+
+
 h1 {
     color: whitesmoke;
     text-align: center;
     font-size: 48pt;
 }
 
-.start {
-    font-size: 12pt;
-    text-align: center;
+#start {
+    font-size: 48pt;
+
+   
 }
 
 footer {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    background-color: lawngreen;
+    background-color: limegreen;
     position: absolute;
-    height: 50px;
+    height: 90px;
     width: 100%;
     bottom: 0;
     

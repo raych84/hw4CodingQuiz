@@ -1,6 +1,6 @@
-var questions = [
+const questions = [
   {
-    title: "How many parks are ther in Walt Disney World?",
+    title: "How many parks are there in Walt Disney World?",
     choices: ["Four", "Seven", "Two", "One"],
     answer: "Four"
   },
@@ -32,7 +32,7 @@ var questions = [
   {
     title: "What country uses 'Pound Sterling' as currency?:",
     choices: ["The United Kingdom", "France", "China", "Russia"],
-    answer: "The United Kindom"
+    answer: "The United Kingdom"
   },
   {
     title: "What is an API?:",
@@ -48,5 +48,5 @@ var questions = [
     title: "What year was Macintosh released?:",
     choices: ["1990", "1976", "1984", "2000"],
     answer: "1984"
-  },
+  }
 ]
