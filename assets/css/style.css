@@ -1,9 +1,14 @@
 body {
     background-image: url(../images/riddler.png);
     background-color: darkgrey;
-    background-repeat: space ;
-    background-position: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#start {
+    background-color: black;
+    color: limegreen;
+    
+    
 }
 
 .display-questions {
@@ -34,11 +39,7 @@ h1 {
     font-size: 48pt;
 }
 
-#start {
-    font-size: 48pt;
 
-   
-}
 
 footer {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
